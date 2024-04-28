@@ -9,7 +9,7 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 /**
  * Generates a random integer within a range.
@@ -225,8 +225,9 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  clearScore();
+  //clearScore();
   updateScore();
+  playAudio(audioHit);
   return points;
 }
 
@@ -273,11 +274,32 @@ function stopGame(){
 *
 */
 function startGame(){
+  clearScore();
   setDuration(10);
   showUp();
   startTimer();
   setEventListeners();
   return "game started";
+}
+
+const audioHit = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/hit.mp3?raw=true");
+const song = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/molesong.mp3?raw=true");
+
+function playAudio(audioObject) {
+  audioObject.play();
+}
+
+function loopAudio(audioObject) {
+  audioObject.loop = true;
+  playAudio(audioObject);
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play(){
+  playAudio(song);
 }
 
 startButton.addEventListener("click", startGame);

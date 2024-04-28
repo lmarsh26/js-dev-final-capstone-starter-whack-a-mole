@@ -28,12 +28,23 @@ h2 {
 #start {
     text-align: center;
     font-size: 30px;
-    justify-content: center;
 }
 
 #timer{
     color: white;
 }
+
+.button {
+  text-align: center;
+}
+
+/* .top {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+} */
 
 .grid {
   width: 600px;
